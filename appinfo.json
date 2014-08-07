@@ -1,8 +1,8 @@
 {
   "uuid": "273d9627-e4c0-4518-9fad-839809b2a2c3",
-  "shortName": "ems_timer",
-  "longName": "ems_timer",
-  "companyName": "MakeAwesomeHappen",
+  "shortName": "EMS Timer",
+  "longName": "EMS Timer",
+  "companyName": "Integrare Software",
   "versionCode": 1,
   "versionLabel": "1.0.0",
   "watchapp": {
@@ -12,6 +12,22 @@
     "dummy": 0
   },
   "resources": {
-    "media": []
+    "media": [
+    {
+		"type": "png",
+		"name": "IMAGE_ACTION_ICON_PLAY",
+		"file": "images/play_icon.png"
+    },
+	{
+		"type": "png",
+		"name": "IMAGE_ACTION_ICON_NEXT",
+		"file": "images/next_icon.png"
+	},
+	{
+		"type": "png",
+		"name": "IMAGE_ACTION_ICON_RESET",
+		"file": "images/reset_icon.png"
+	}
+	    ]
   }
 }

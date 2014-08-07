@@ -1,0 +1,16 @@
+EMS Timer Outline
+=====================
+
+-This should be a pebble app that allows users to keep track of their own times when running EMS calls
+-There will be different phases of the call
+	-En route
+	-On Scene
+	-Pt. contact
+	-Transporting
+	-At Destination
+	-Clear
+-These times will be recorded and then sent to an app on the phone where all of the times are compiled as well as some statistics and a summary sheet shown
+-The app could possibly email these times
+-I want to find a way to allow the times to be edited on the watchapp and the phone app
+-There will be a timer constantly running showing overall time elapsed
+-The right sided buttons will update themselves to the next option and then show the current option
