@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="com.integraresoftware.android.emstimer.database"
+            android:name="com.integraresoftware.android.emstimer.database.DbProvider"
+            android:exported="false" >
+        </provider>
+
     </application>
 
 </manifest>
