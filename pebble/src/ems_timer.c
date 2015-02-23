@@ -50,49 +50,52 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 	if (started) {
 		elapsed_seconds++;
 		// stop the clock if over 10 hours has passed
-		if (elapsed_seconds == 3600){
+		if (elapsed_seconds == 35999){
 			started = false;
 			// do something to let the user know the app will not handle 
 			// a call longer then 10 hours
 		}
-			
 		// string-ify elapsed time and add leading zeros if needed 
 		// if less then 10 minutes and less then 10 seconds
-		if ((elapsed_seconds % 60) < 10 && elapsed_seconds < 600 ) {
+		if ((elapsed_seconds % 60) < 10 && (elapsed_seconds % 3600) < 600 ) {
+//			APP_LOG(APP_LOG_LEVEL_INFO, "if = 1, less then 10 minutes and less then 10 seconds");
 			snprintf(
 				time_display, 
 				sizeof(time_display), 
 				"%d:0%d:0%d", 
 				(elapsed_seconds / 3600), 
-				(elapsed_seconds / 60), 
-				(elapsed_seconds % 60));
+				((elapsed_seconds % 3600) / 60), 
+				((elapsed_seconds % 3600) % 60));
 			// if greater then or equal to 10 minutes but less then 10 seconds
-		} else if (elapsed_seconds < 600) {
+		} else if ((elapsed_seconds % 3600) < 600) {
+//			APP_LOG(APP_LOG_LEVEL_INFO, "if = 2, greater then 10 minutes and less then 10 seconds");
 			snprintf(
 				time_display,
 				sizeof(time_display),
 				"%d:0%d:%d",
 				(elapsed_seconds / 3600),
-				(elapsed_seconds / 60),
-				(elapsed_seconds % 60));
+				((elapsed_seconds % 3600) / 60),
+				((elapsed_seconds % 3600) % 60));
 			// if less then 10 seconds, but greater then 10 minutes
 		} else if ((elapsed_seconds % 60) < 10 && elapsed_seconds > 599) {
+//			APP_LOG(APP_LOG_LEVEL_INFO, "if = 3, less then 10 minutes and greater then 10 seconds");
 			snprintf(
 				time_display, 
 				sizeof(time_display), 
 				"%d:%d:0%d", 
 				(elapsed_seconds / 3600), 
-				(elapsed_seconds / 60), 
-				(elapsed_seconds % 60));
+				((elapsed_seconds % 3600) / 60), 
+				((elapsed_seconds % 3600) % 60));
 			// for greater then 10 minutes and greater then 10 seconds
 		} else {
+//			APP_LOG(APP_LOG_LEVEL_INFO, "else, greater then 10 minutes and greater then 10 seconds");
 			snprintf(
 				time_display,
 				sizeof(time_display),
 				"%d:%d:%d",
 				(elapsed_seconds / 3600),
-				(elapsed_seconds / 60),
-				(elapsed_seconds % 60));
+				((elapsed_seconds % 3600) / 60),
+				((elapsed_seconds % 3600) % 60));
 		}
 		
 		text_layer_set_text(time_text_layer, time_display);
@@ -194,7 +197,7 @@ static void window_load(Window *window) {
   GRect bounds = layer_get_bounds(window_layer);
   const int16_t width = bounds.size.w - ACTION_BAR_WIDTH - 3;
 
-	// create "time elaped" later
+	// create "time elapsed" later
   text_layer = text_layer_create((GRect) { .origin = {0, 0 }, .size = { width, 20} });
   text_layer_set_text(text_layer, "Time Elapsed:");
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
