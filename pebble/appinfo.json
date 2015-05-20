@@ -3,7 +3,7 @@
   "shortName": "EMS Timer",
   "longName": "EMS Timer",
   "companyName": "Integrare Software",
-  "versionCode": 3,
+  "versionCode": 4,
   "versionLabel": "1.2",
   "watchapp": {
     "watchface": false
