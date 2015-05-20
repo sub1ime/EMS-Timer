@@ -13,28 +13,32 @@
   },
   "resources": {
     "media": [
-	{
-		"type": "png",
-		"name": "IMAGE_ACTION_ICON_AMBULANCE",
-		"file": "images/small_icon_ambulance.png",
-		"menuIcon": "true"
-	
-	},
-    {
-		"type": "png",
-		"name": "IMAGE_ACTION_ICON_PLAY",
-		"file": "images/play_icon.png"
-    },
-	{
-		"type": "png",
-		"name": "IMAGE_ACTION_ICON_NEXT",
-		"file": "images/next_icon.png"
-	},
-	{
-		"type": "png",
-		"name": "IMAGE_ACTION_ICON_RESET",
-		"file": "images/reset_icon.png"
-	}
-	    ]
-  }
+      {
+        "type": "png",
+        "name": "IMAGE_ACTION_ICON_AMBULANCE",
+        "file": "images/small_icon_ambulance.png",
+        "menuIcon": "true"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_ACTION_ICON_PLAY",
+        "file": "images/play_icon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_ACTION_ICON_NEXT",
+        "file": "images/next_icon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_ACTION_ICON_RESET",
+        "file": "images/reset_icon.png"
+      }
+    ]
+  },
+  "targetPlatforms": [
+    "aplite",
+    "basalt"
+  ],
+  "sdkVersion": "3"
 }
